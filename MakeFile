@@ -1,0 +1,9 @@
+all: all.out
+all.out : gcomplex.o gcomplex_test.o
+	g++ $^ -o $@ -lgtest -lgtest_main -lpthread
+gcomplex_test.o: gcomplex_test.cpp gcomplex.cpp gcomplex.h
+	g++ $< -c
+gcomplex.o: gcomplex.cpp gcomplex.h
+	g++ $< -c
+clean:
+	rm -rf *.o *.out
