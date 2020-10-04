@@ -1,4 +1,3 @@
-#include "gcomplex.h"
 #include "gtest/gtest.h"
 #include "gcomplex.cpp"
 
@@ -15,3 +14,8 @@ TEST(Complex,DefaultConstructor)
     EXPECT_EQ(0,a.re());
     EXPECT_EQ(0,a.img());
 }
+int main(int argc, char **argv)
+    {
+    testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
+    }
